@@ -1,0 +1,251 @@
+/* Certificate Authenticity & Official Information Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.cert-verify-body {
+    background-color: #ffffff;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cert-page-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 1. Header Logos Banner */
+.cert-header-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0 20px;
+}
+
+.cert-header-banner img.header-logos {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 2. Championship Title Section */
+.cert-championship-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cert-org-title {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #0b1329;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+
+.cert-event-title {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.45;
+    margin-bottom: 16px;
+    padding: 0 10px;
+}
+
+.cert-gold-divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4a359 0%, #c59b27 100%);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* 3. Main Verification Content */
+.cert-content-section {
+    width: 100%;
+    text-align: center;
+    padding-top: 32px;
+}
+
+.cert-main-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #0f172a;
+    margin-bottom: 18px;
+    padding: 0 8px;
+}
+
+.cert-authority-description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #475569;
+    max-width: 540px;
+    margin: 0 auto 36px;
+    padding: 0 12px;
+    font-weight: 400;
+}
+
+/* 4. Contact Information Card */
+.cert-contact-card {
+    background-color: #f8fafc;
+    border: 1.5px solid #0f172a;
+    border-radius: 8px;
+    padding: 32px 24px 28px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.cert-card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 24px;
+}
+
+.cert-info-group {
+    margin-bottom: 18px;
+}
+
+.cert-info-group.phone-group {
+    margin-bottom: 24px;
+}
+
+.cert-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.cert-email-value {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+    word-break: break-all;
+}
+
+.cert-email-value:hover {
+    color: #1e40af;
+}
+
+/* 5. Contact Verification Button */
+.cert-btn-verify {
+    display: block;
+    width: 100%;
+    background-color: #0b1329;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid #0b1329;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(11, 19, 41, 0.15);
+}
+
+.cert-btn-verify:hover {
+    background-color: #1e293b;
+    border-color: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(11, 19, 41, 0.22);
+}
+
+.cert-btn-verify:active {
+    transform: translateY(0);
+}
+
+/* 6. Page Footer */
+.cert-footer {
+    width: 100%;
+    text-align: center;
+    padding: 18px 20px;
+    border-top: 1px solid #f1f5f9;
+    background-color: #ffffff;
+}
+
+.cert-footer p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .cert-page-container {
+        padding: 16px 16px 36px;
+    }
+    
+    .cert-org-title {
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+    
+    .cert-event-title {
+        font-size: 14px;
+    }
+    
+    .cert-main-heading {
+        font-size: 22px;
+    }
+    
+    .cert-authority-description {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+    
+    .cert-contact-card {
+        padding: 24px 18px 22px;
+    }
+    
+    .cert-card-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .cert-email-value {
+        font-size: 15px;
+    }
+    
+    .cert-btn-verify {
+        font-size: 14px;
+        padding: 14px 16px;
+    }
+}
