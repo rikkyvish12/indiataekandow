@@ -83,6 +83,11 @@ class MainPagesController extends Controller
         ]);
     }
 
+    public function certificate_authenticity()
+    {
+        return view('pages.main.certificate_authenticity');
+    }
+
 
      public function taekwondo(){
           return view('pages.main.about.taekwondo')->with(

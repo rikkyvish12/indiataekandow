@@ -47,17 +47,21 @@ class AppServiceProvider extends ServiceProvider
         view()->share('no', '1');
         view()->share('no1', '1');
         view()->share('no2', '1');
-        view()->share('eventprofile', EventProfile::orderBy('created_at','desc')->first());
-        view()->share('profile', MainProfile::orderBy('created_at','desc')->first());
-        view()->share('latest_news', News::latest()->take(4)->get());
-        view()->share('education',Education::orderBy('created_at','desc')->get());
-        view()->share('defaults',Defaults::orderBy('created_at','desc')->first());
-        view()->share('committee',Committee::orderBy('created_at','desc')->get());
-        view()->share('rules',RulesAndRegulations::orderBy('created_at','desc')->get());
-       // view()->share('state_profile',AssociationProfile::orderBy('created_at','desc')->first());
-        view()->share('assoc_defaults',DefaultAssociation::orderBy('created_at','desc')->first());
-        view()->share('event_defaults',DefaultEvents::orderBy('created_at','desc')->first());
-        view()->share('committee',AssociationCommittee::orderBy('created_at','desc')->get());
+        try {
+            view()->share('eventprofile', EventProfile::orderBy('created_at','desc')->first());
+            view()->share('profile', MainProfile::orderBy('created_at','desc')->first());
+            view()->share('latest_news', News::latest()->take(4)->get());
+            view()->share('education',Education::orderBy('created_at','desc')->get());
+            view()->share('defaults',Defaults::orderBy('created_at','desc')->first());
+            view()->share('committee',Committee::orderBy('created_at','desc')->get());
+            view()->share('rules',RulesAndRegulations::orderBy('created_at','desc')->get());
+           // view()->share('state_profile',AssociationProfile::orderBy('created_at','desc')->first());
+            view()->share('assoc_defaults',DefaultAssociation::orderBy('created_at','desc')->first());
+            view()->share('event_defaults',DefaultEvents::orderBy('created_at','desc')->first());
+            view()->share('committee',AssociationCommittee::orderBy('created_at','desc')->get());
+        } catch (\Throwable $e) {
+            // Silently ignore during console/artisan commands if database is temporarily unavailable
+        }
 
         view()->composer('*', function ($view) 
         {

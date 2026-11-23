@@ -25,6 +25,10 @@ Route::get('/storage_symlink', function () {
 });
 Route::get('/getDistricts/{state_id}',[App\Http\Controllers\Admin\Main\DistrictAssociationController::class, 'getDistricts']);
 Route::post('/contactUs', [App\Http\Controllers\MainPagesController::class, 'contactUsController']);
+Route::get('/certificate-authenticity', [App\Http\Controllers\MainPagesController::class, 'certificate_authenticity'])->name('certificate.authenticity');
+Route::get('/certificateauthenticity', function () {
+    return redirect()->route('certificate.authenticity');
+});
 
 
 Route::get('/', [App\Http\Controllers\MainPagesController::class, 'index']);
