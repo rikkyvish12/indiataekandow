@@ -1,0 +1,54 @@
+@extends('layouts.admin.admin')
+
+
+
+@section('content')
+<div id="content" class="main-content">
+    <div class="container">
+<br><br>
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div id="basic" class="col-lg-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Update Video Gallery</h4>
+                                </div>                 
+                            </div>
+                        </div>
+                        <div class="widget-content widget-content-area">
+
+                            <div class="row">
+                                <div class="col-lg-12 col-12 mx-auto">
+                                    <form method="POST" action="{{ route('admin.video_gallery.update',$video->id) }}" enctype="multipart/form-data">
+                                        @csrf
+                                        {{ method_field('PUT') }}
+                                        <div class="form-group">
+                                            <p>Album</p>
+                                            <select name="album" id="album" class="form-control">
+                                                {{-- <option  value="{{ $video->album_name }}">{{ $video->album_name }}</option> --}}
+                                            @foreach ($album as $item)
+                                                <option  @if($video->album_name == $item->album_name) selected  @endif value="{{ $item->album_name }}">{{ $item->album_name }}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Youtube Link</p>
+                                            <input  type="text" name="link" id="link" value="{{$video->youtube_link}}" placeholder="Youtube Link" class="form-control" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="margin: 10px">Submit</button>
+                                    </form>
+                                </div>                                        
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+<!--  END CONTENT AREA  -->
+@endsection
